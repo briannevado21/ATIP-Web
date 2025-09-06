@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +8,13 @@
   <link rel="icon" href="img/favicon-32.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Firebase (opcional) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
 </head>
 <body>
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-inner">
@@ -44,7 +47,6 @@
         </div>
       </div>
       <div class="hero-right">
-        <!-- espacio para imagen o tarjeta destacada -->
         <div class="card highlight">
           <h3>Promoción</h3>
           <p>¡Inscríbete hoy y obtén una clase gratis!</p>
@@ -54,143 +56,7 @@
     </div>
   </section>
 
-  <!-- FEATURES / CURSOS -->
-  <section id="features" class="section">
-    <div class="container">
-      <h2 class="section-title">Nuestros cursos</h2>
-      <div class="grid-3">
-        <article class="card">
-          <img src="img/course-1.jpg" alt="Curso 1" class="card-img" />
-          <h3>Inglés Básico</h3>
-          <p>Fundamentos, vocabulario y confianza para hablar.</p>
-        </article>
-
-        <article class="card">
-          <img src="img/course-2.jpg" alt="Curso 2" class="card-img" />
-          <h3>Inglés Intermedio</h3>
-          <p>Conversación, gramática aplicada y listening.</p>
-        </article>
-
-        <article class="card">
-          <img src="img/course-3.jpg" alt="Curso 3" class="card-img" />
-          <h3>Preparación IELTS / TOEFL</h3>
-          <p>Estrategias y simulacros para exámenes internacionales.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORO (placeholder) -->
-  <section id="foro" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Foro de estudiantes</h2>
-      <p>Pronto aquí podrás iniciar sesión y publicar preguntas. (Integramos Firebase cuando quieras)</p>
-      <a class="btn" href="contact.html">Crea tu cuenta</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <img src="img/logo.png" alt="ATIP" class="logo logo-footer" />
-        <small>© <span id="year"></span> ATIP Education & Technology</small>
-      </div>
-
-      <div class="footer-links">
-        <a href="index.html">Inicio</a>
-        <a href="about.html">Nosotros</a>
-        <a href="courses.html">Cursos</a>
-        <a href="contact.html">Contacto</a>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.facebook.com/atip.academy" target="_blank" rel="noopener" aria-label="Facebook">
-          <!-- Facebook SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.128 8.438 9.878V14.89h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.772-1.63 1.562v1.876h2.773l-.443 2.89h-2.33v6.99C18.344 21.128 22 17 22 12z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/atip.academy/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 5.6A4.4 4.4 0 1 1 7 12a4.4 4.4 0 0 1 5-4.4zM18.5 6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@atipacademy" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C16.7 2.5 12 2.5 12 2.5s-4.7 0-8.6.4c-.4 0-1.3.1-2.1 1C.9 4.7.6 6.3.6 6.3S.3 8.1.3 9.9v2.2c0 1.8.3 3.6.3 3.6s.2 1.6.8 2.3c.8.9 1.8.9 2.3 1 1.6.2 6.6.4 6.6.4s4.7 0 8.6-.4c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.3-1.8.3-3.6V9.9c0-1.8-.3-3.7-.3-3.7zM9.8 15.6V8.4l6.8 3.6-6.8 3.6z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@atip.academy?lang=es-419" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2v12.1A4.4 4.4 0 1 1 9 9.7V12c0 1.9 1.5 3.4 3.4 3.4 1.9 0 3.3-1.5 3.4-3.4V6h2.2A6.6 6.6 0 0 0 12.5 2z"/></svg>
-        </a>
-        <a href="https://x.com/AtipAcademy" target="_blank" rel="noopener" aria-label="X">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 5.5c0 .3-.2.5-.5.5h-16c-.3 0-.5-.2-.5-.5S4.2 5 4.5 5h16c.3 0 .5.2.5.5zM6 12.5c0-.3.2-.5.5-.5h11c.3 0 .5.2.5.5s-.2.5-.5.5h-11c-.3 0-.5-.2-.5-.5z"/></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/app.js"></script>
-</body>
-</html>
-=======
-=======
->>>>>>> ea1c4240332e95f7435fac54f476acdf12b30f4e
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <!-- Firebase App (core) -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
-<!-- Firebase Authentication -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ATIP Education & Technology</title>
-  <meta name="description" content="ATIP - Academia de inglés: cursos, recursos y comunidad." />
-  <link rel="icon" href="img/favicon-32.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <img src="img/logo.png" alt="ATIP logo" class="logo" />
-      </a>
-
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="about.html">Nosotros</a>
-        <a href="courses.html">Cursos</a>
-        <a href="contact.html">Contacto</a>
-        <a class="btn btn-sm" href="contact.html">Inscribirme</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" style="background-image:url('img/banner.jpg')">
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <h1>Aprende Inglés con ATIP</h1>
-        <p class="lead">Clases online, profesores nativos, metodología práctica y comunidad activa.</p>
-        <div class="cta">
-          <a class="btn" href="courses.html">Ver cursos</a>
-          <a class="btn btn-outline" href="contact.html">Contáctanos</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <!-- espacio para imagen o tarjeta destacada -->
-        <div class="card highlight">
-          <h3>Promoción</h3>
-          <p>¡Inscríbete hoy y obtén una clase gratis!</p>
-          <a class="btn btn-sm" href="contact.html">Inscribirme</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES / CURSOS -->
+  <!-- CURSOS -->
   <section id="features" class="section">
     <div class="container">
       <h2 class="section-title">Nuestros cursos</h2>
@@ -242,20 +108,29 @@
 
       <div class="socials">
         <a href="https://www.facebook.com/atip.academy" target="_blank" rel="noopener" aria-label="Facebook">
-          <!-- Facebook SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.128 8.438 9.878V14.89h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.772-1.63 1.562v1.876h2.773l-.443 2.89h-2.33v6.99C18.344 21.128 22 17 22 12z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.128 8.438 9.878V14.89h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.772-1.63 1.562v1.876h2.773l-.443 2.89h-2.33v6.99C18.344 21.128 22 17 22 12z"/>
+          </svg>
         </a>
         <a href="https://www.instagram.com/atip.academy/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 5.6A4.4 4.4 0 1 1 7 12a4.4 4.4 0 0 1 5-4.4zM18.5 6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 5.6A4.4 4.4 0 1 1 7 12a4.4 4.4 0 0 1 5-4.4zM18.5 6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+          </svg>
         </a>
         <a href="https://www.youtube.com/@atipacademy" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C16.7 2.5 12 2.5 12 2.5s-4.7 0-8.6.4c-.4 0-1.3.1-2.1 1C.9 4.7.6 6.3.6 6.3S.3 8.1.3 9.9v2.2c0 1.8.3 3.6.3 3.6s.2 1.6.8 2.3c.8.9 1.8.9 2.3 1 1.6.2 6.6.4 6.6.4s4.7 0 8.6-.4c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.3-1.8.3-3.6V9.9c0-1.8-.3-3.7-.3-3.7zM9.8 15.6V8.4l6.8 3.6-6.8 3.6z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C16.7 2.5 12 2.5 12 2.5s-4.7 0-8.6.4c-.4 0-1.3.1-2.1 1C.9 4.7.6 6.3.6 6.3S.3 8.1.3 9.9v2.2c0 1.8.3 3.6.3 3.6s.2 1.6.8 2.3c.8.9 1.8.9 2.3 1 1.6.2 6.6.4 6.6.4s4.7 0 8.6-.4c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.3-1.8.3-3.6V9.9c0-1.8-.3-3.7-.3-3.7zM9.8 15.6V8.4l6.8 3.6-6.8 3.6z"/>
+          </svg>
         </a>
         <a href="https://www.tiktok.com/@atip.academy?lang=es-419" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2v12.1A4.4 4.4 0 1 1 9 9.7V12c0 1.9 1.5 3.4 3.4 3.4 1.9 0 3.3-1.5 3.4-3.4V6h2.2A6.6 6.6 0 0 0 12.5 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.5 2v12.1A4.4 4.4 0 1 1 9 9.7V12c0 1.9 1.5 3.4 3.4 3.4 1.9 0 3.3-1.5 3.4-3.4V6h2.2A6.6 6.6 0 0 0 12.5 2z"/>
+          </svg>
         </a>
         <a href="https://x.com/AtipAcademy" target="_blank" rel="noopener" aria-label="X">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 5.5c0 .3-.2.5-.5.5h-16c-.3 0-.5-.2-.5-.5S4.2 5 4.5 5h16c.3 0 .5.2.5.5zM6 12.5c0-.3.2-.5.5-.5h11c.3 0 .5.2.5.5s-.2.5-.5.5h-11c-.3 0-.5-.2-.5-.5z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 5.5c0 .3-.2.5-.5.5h-16c-.3 0-.5-.2-.5-.5S4.2 5 4.5 5h16c.3 0 .5.2.5.5zM6 12.5c0-.3.2-.5.5-.5h11c.3 0 .5.2.5.5s-.2.5-.5.5h-11c-.3 0-.5-.2-.5-.5z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -264,7 +139,4 @@
   <script src="js/app.js"></script>
 </body>
 </html>
-<<<<<<< HEAD
->>>>>>> ea1c424 (Actualización de about.html: agregados nuevos miembros del equipo)
-=======
->>>>>>> ea1c4240332e95f7435fac54f476acdf12b30f4e
+

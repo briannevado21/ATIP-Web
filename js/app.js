@@ -1,60 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-links');
-    const yearEl = document.getElementById('year');
-  
-    if (toggle && !toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded','false');
-  
-    if(toggle && nav){
-      toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-  
-      nav.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', () => {
-          if(nav.classList.contains('open')){
-            nav.classList.remove('open');
-            toggle.setAttribute('aria-expanded','false');
-          }
-        });
-      });
-  
-      document.addEventListener('click', e=>{
-        if(!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('open')){
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-        }
-      });
-  
-      document.addEventListener('keydown', e=>{
-        if(e.key==='Escape' && nav.classList.contains('open')){
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-        }
-      });
-    }
-  
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(link=>{
-      link.addEventListener('click', e=>{
-        const href = link.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if(target) target.scrollIntoView({behavior:'smooth'});
-        }
-      });
-    });
-  
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-  
-  
-  
-
-// Firebase
+// js/app.js
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
@@ -79,55 +23,58 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  // NAVBAR
+  // ---------------- NAVBAR ----------------
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
-  if (toggle && !toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded','false');
-  if(toggle && nav){
+  if (toggle && !toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
+
+  if (toggle && nav) {
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    nav.querySelectorAll('a').forEach(a=>{
+
+    nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        if(nav.classList.contains('open')){
+        if (nav.classList.contains('open')) {
           nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
+          toggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
-    document.addEventListener('click', e=>{
-      if(!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('open')){
+
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('open')) {
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
-    document.addEventListener('keydown', e=>{
-      if(e.key==='Escape' && nav.classList.contains('open')){
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  // SMOOTH SCROLL
-  document.querySelectorAll('a[href^="#"]').forEach(link=>{
-    link.addEventListener('click', e=>{
+  // --------------- SMOOTH SCROLL ---------------
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
       const href = link.getAttribute('href');
-      if(href.length>1){
+      if (href.length > 1) {
         e.preventDefault();
         const target = document.querySelector(href);
-        if(target) target.scrollIntoView({behavior:'smooth'});
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
 
-  // FOOTER YEAR
+  // --------------- FOOTER YEAR ---------------
   const yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // LOGIN GOOGLE
+  // --------------- LOGIN GOOGLE ---------------
   const googleBtn = document.getElementById("google-sign-in");
   const userInfo = document.getElementById("user-info");
   let currentUser = null;
@@ -158,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // FORMULARIO CONTACTO
+  // --------------- FORMULARIO CONTACTO ---------------
   const contactForm = document.querySelector('.contact-form');
-  if(contactForm){
-    contactForm.addEventListener('submit', async e=>{
+  if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
       e.preventDefault();
       if (!currentUser) {
         alert("Debes iniciar sesión para enviar un mensaje.");
@@ -191,5 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
   
-=======
+
 // Firebase
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -192,4 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
->>>>>>> ea1c424 (Actualización de about.html: agregados nuevos miembros del equipo)
+

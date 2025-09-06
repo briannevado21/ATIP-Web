@@ -6,6 +6,9 @@
   <title>Contacto | ATIP</title>
   <link rel="icon" href="img/favicon-32.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-yxP6W3v5rHjOZQClc6QZzXk5Tv2yyB2TRm2GZ4QyciT+p9zDcCkn2G1BxE1Z5qmg4Qo3KzH8df3jVqJc9l5/0w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -49,7 +52,7 @@
         <!-- Formulario -->
         <div>
           <h2 class="section-title">Envíanos un mensaje</h2>
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado (demo)');">
+          <form class="contact-form">
             <div class="grid-2">
               <input type="text" placeholder="Tu nombre" required />
               <input type="email" placeholder="Tu correo" required />
@@ -64,15 +67,15 @@
         <aside class="card contact-info">
           <h3>También puedes</h3>
           <p class="muted">Escribirnos por redes o por WhatsApp:</p>
-          <p style="margin-top:10px"><strong>WhatsApp:</strong> <a href="https://wa.me/51912345678" target="_blank">+51 912 345 678</a></p>
-          <p><strong>Email:</strong> <a href="mailto:contacto@atip.pe">contacto@atip.pe</a></p>
+          <p style="margin-top:10px"><strong>WhatsApp:</strong> <a href="https://wa.me/51912345678" target="_blank">+51 933 639 611</a></p>
+          <p><strong>Email:</strong> <a href="mailto:brian.nevado@atip.pe">brian.nevado@atip.pe</a></p>
           <p style="margin-top:12px">Síguenos en redes:</p>
-          <div style="display:flex;gap:8px;margin-top:8px;">
-            <a href="https://www.facebook.com/atip.academy" target="_blank">Fb</a>
-            <a href="https://www.instagram.com/atip.academy/" target="_blank">Ig</a>
-            <a href="https://www.youtube.com/@atipacademy" target="_blank">Yt</a>
-            <a href="https://www.tiktok.com/@atip.academy?lang=es-419" target="_blank">Tk</a>
-            <a href="https://x.com/AtipAcademy" target="_blank">X</a>
+          <div style="display:flex; gap:10px; margin-top:8px;">
+            <a href="https://www.facebook.com/atip.academy" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/atip.academy/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@atipacademy" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@atip.academy?lang=es-419" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/AtipAcademy" target="_blank"><i class="fab fa-x-twitter"></i></a>
           </div>
         </aside>
 
@@ -93,10 +96,22 @@
         <a href="courses.html">Cursos</a>
         <a href="contact.html">Contacto</a>
       </div>
-      <div class="socials"><a href="https://www.facebook.com/atip.academy" target="_blank" rel="noopener">Fb</a></div>
-    </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/atip.academy" target="_blank">
+          <img src="img/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/atip.academy/" target="_blank">
+          <img src="img/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/51912345678" target="_blank">
+          <img src="img/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js" type="module"></script>
 </body>
 </html>
+
+
